@@ -11,6 +11,7 @@ builder.Services.AddControllers();
 //builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddDbContext<TestContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Ovveride tenantId: https://www.codingame.com/playgrounds/5514/multi-tenant-asp-net-core-4---applying-tenant-rules-to-all-enitites
 
 builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddTransient<ITenantProvider, DummyTenantPovider>();
